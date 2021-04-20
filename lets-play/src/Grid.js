@@ -147,6 +147,21 @@ class Grid extends React.Component {
         }
         this.setState({ cells: this.makeCells() });
     }
+
+    handleClear = () => {
+        this.grid = this.makeEmptyGrid();
+        this.setState({ cells: this.makeCells() });
+    }
+
+    handleRandom = () => {
+        for (let y = 0; y < this.rows; y++) {
+            for (let x = 0; x < this.cols; x++) {
+                this.grid[y][x] = (Math.random() >= 0.5); 
+            }
+        }
+
+        this.setState({ cells: this.makeCells() });
+    }
         
     render() {
         const { cells, interval, isRunning } = this.state;
@@ -168,6 +183,9 @@ class Grid extends React.Component {
                 {isRunning ? 
                 <button className="button" onClick={this.stopGame}>Stop</button> : 
                 <button className="button" onClick={this.playGame}>Play</button>}
+
+                <button className="button" onClick={this.handleRandom}>Randomize Me!</button>
+                <button className="button" onClick={this.handleClear}>Clear</button>
             </div>
             </>
         );
