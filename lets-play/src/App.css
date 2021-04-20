@@ -2,4 +2,10 @@
   text-align: center;
   background-color: black;
 }
+.header{
+  background-color: black;
+  color: #04d9ff;
+  height: 10vh;
+  padding: 3%;
+}
 

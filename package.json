@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "core-js": "^3.10.2",
+    "particles-bg": "^2.5.5"
+  }
+}

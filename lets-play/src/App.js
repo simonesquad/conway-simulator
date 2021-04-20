@@ -4,6 +4,9 @@ import Grid from './Grid';
 function App() {
   return (
     <div className="App">
+      <header className="header">
+        <h1>Conway's Game of Life Simulator</h1>
+      </header>
       <Grid />
     </div>
   );
