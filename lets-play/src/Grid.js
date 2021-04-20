@@ -1,6 +1,7 @@
 import React from 'react';
 import './Grid.css';
-import ParticlesBg from 'particles-bg'
+import ParticlesBg from 'particles-bg';
+import { Link } from 'react-router-dom';
 
 const CELL_SIZE = 20;
 const WIDTH = 800;
@@ -204,6 +205,9 @@ class Grid extends React.Component {
 
                 <button className="button" onClick={this.handleRandom}>Randomize Me!</button>
                 <button className="button" onClick={this.handleClear}>Clear</button>
+                <Link to='/map'>
+                <button className="button">Map</button>
+                </Link>
             </div>
             <div className="Grid" 
                 style={{ width: WIDTH, height: HEIGHT, 

@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "core-js": "^3.10.2",
-    "particles-bg": "^2.5.5"
+    "immer": "^9.0.1",
+    "particles-bg": "^2.5.5",
+    "react-router-dom": "^5.2.0"
   }
 }
