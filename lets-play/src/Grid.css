@@ -7,6 +7,12 @@
 }
 
 .Cell {
-    background: #ccc;
+    background: #04d9ff;
     position: absolute;
+}
+
+.Controls {
+    height: 10vh;
+    align-content: center;
+    margin-top: 3%;
 }

@@ -11,6 +11,12 @@ function App() {
 
 export default App;
 
+
+
+
+
+
+
 ////SIMONE'S PSEUDOCODE////
 
 //using React.js and HOOKS in place of state management//

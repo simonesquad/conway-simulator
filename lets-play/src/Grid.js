@@ -3,7 +3,7 @@ import './Grid.css';
 
 const CELL_SIZE = 20;
 const WIDTH = 800;
-const HEIGHT = 600;
+const HEIGHT = 675;
 
 class Cell extends React.Component {
     render() {
@@ -29,8 +29,8 @@ class Grid extends React.Component {
     }
     state = { 
         cells: [], 
-        interval: 100,
         isRunning: false,
+        interval: 100,
     }
     playGame = () => {
         this.setState({ isRunning: true });
@@ -155,14 +155,15 @@ class Grid extends React.Component {
             <>
             <div className="Grid" 
             style={{ width: WIDTH, height: HEIGHT, 
-            backgroundSize: `${CELL_SIZE}px ${CELL_SIZE}px`}} onClick={this.handleClick} ref={(n) => { this.gridRef = n; }}>
+            backgroundSize: `${CELL_SIZE}px ${CELL_SIZE}px`}} onClick={this.handleClick} 
+            ref={(n) => { this.gridRef = n; }}>
                 
             {cells.map(cell => (
                 <Cell x={cell.x} y={cell.y} key={`${cell.x},${cell.y}`}/>
                 ))}
             </div>
 
-            <div className="controls">
+            <div className="Controls">
                 Update every <input value={this.state.interval} onChange={this.handleIntervalChange} /> msc 
                 {isRunning ? 
                 <button className="button" onClick={this.stopGame}>Stop</button> : 
