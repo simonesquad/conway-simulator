@@ -82,7 +82,7 @@ class Grid extends React.Component {
             [1, 1],
             [1, 0],
             [1, -1],
-            [0, -1],
+            [0, -1]
         ];
         for (let i = 0; i < dirs.length; i++) {
             const dir = dirs[i];
@@ -149,19 +149,24 @@ class Grid extends React.Component {
     }
         
     render() {
-        const { cells, isRunning } = this.state;
+        const { cells, interval, isRunning } = this.state;
 
         return (
             <>
-            <div className="Grid" style={{ width: WIDTH, height: HEIGHT, backgroundSize: `${CELL_SIZE}px ${CELL_SIZE}px`}} onClick={this.handleClick} ref={(n) => { this.gridRef = n; }}>
-                {cells.map(cell => (
-                    <Cell x={cell.x} y={cell.y} key={`${cell.x},${cell.y}`}/>
+            <div className="Grid" 
+            style={{ width: WIDTH, height: HEIGHT, 
+            backgroundSize: `${CELL_SIZE}px ${CELL_SIZE}px`}} onClick={this.handleClick} ref={(n) => { this.gridRef = n; }}>
+                
+            {cells.map(cell => (
+                <Cell x={cell.x} y={cell.y} key={`${cell.x},${cell.y}`}/>
                 ))}
             </div>
+
             <div className="controls">
-                <input value={this.state.interval} onChange={this.handleIntervalChange} /> msec 
+                Update every <input value={this.state.interval} onChange={this.handleIntervalChange} /> msc 
                 {isRunning ? 
-                <button className="button" onClick={this.stopGame}>Stop</button> : <button className="button" onClick={this.playGame}>Play</button>}
+                <button className="button" onClick={this.stopGame}>Stop</button> : 
+                <button className="button" onClick={this.playGame}>Play</button>}
             </div>
             </>
         );
