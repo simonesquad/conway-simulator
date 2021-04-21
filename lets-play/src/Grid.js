@@ -205,9 +205,6 @@ class Grid extends React.Component {
 
                 <button className="button" onClick={this.handleRandom}>Randomize Me!</button>
                 <button className="button" onClick={this.handleClear}>Clear</button>
-                <Link to='/map'>
-                <button className="button">Map</button>
-                </Link>
             </div>
             <div className="Grid" 
                 style={{ width: WIDTH, height: HEIGHT, 

@@ -23,7 +23,7 @@ import React, { useState, useCallback, useRef } from 'react';
 import produce from "immer";
 
 const numRows = 50;
-const numCols = 50;
+const numCols = 70;
 
 //the same possible neighbor combinations for each cell in the game
 const operations = [
@@ -37,15 +37,19 @@ const operations = [
     [-1, 0]
 ];
 
+const generateEmptyGrid = () => {
+    const rows = [];
+    for (let i = 0; i < numRows; i++) {
+        rows.push(Array.from(Array(numCols), () => 0));
+    }
+
+    return rows;
+}
+
 
 const Map = () => {
     const [grid, setGrid] = useState(() => {
-        const rows = [];
-        for (let i = 0; i < numRows; i++) {
-            rows.push(Array.from(Array(numCols), () => 0));
-        }
-
-        return rows;
+       return generateEmptyGrid()
     });
 
     const [running, setRunning] = useState(false);
@@ -81,7 +85,7 @@ const Map = () => {
                 }
             });
         });
-        setTimeout(runSimulation, 1000);
+        setTimeout(runSimulation, 100);
     }, []);
 
     return (
@@ -95,8 +99,25 @@ const Map = () => {
                 }
             }}
         >
-            {running ? "stop" : "start"}
+            {running ? "Stop" : "Play"}
         </button>
+        <button
+            onClick={() => {
+                const rows = [];
+                for (let i = 0; i < numRows; i++) {
+                    rows.push(
+                        Array.from(Array(numCols), () => (Math.random() > 0.5 ? 1 : 0))
+                    );
+                }
+
+                setGrid(rows);
+            }}
+        >Randomize Again</button>
+        <button
+            onClick={() => {
+                setGrid(generateEmptyGrid());
+            }}
+        >Clear Grid</button>
         <div 
             style={{
                 display: 'grid',
@@ -117,8 +138,8 @@ const Map = () => {
                     width: 20, 
                     height: 20, 
                     backgroundColor: grid[i][k] ? 
-            'pink' : undefined,
-                    border: 'solid 1px black'
+            'purple' : undefined,
+                    border: 'solid 1px white'
         }} 
         />
         ))
