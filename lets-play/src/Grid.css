@@ -12,7 +12,12 @@
 }
 
 .Controls {
-    height: 10vh;
-    align-content: center;
-    margin-top: 3%;
+    height: 5vh;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20%;
+}
+
+.Controls>button{
+    margin-left: 2%;
 }
