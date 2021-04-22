@@ -114,7 +114,7 @@ const Map = () => {
 
                 setGrid(rows);
             }}
-        >Randomize Again</button>
+        >Randomize!</button>
         <button
             onClick={() => {
                 setGrid(generateEmptyGrid());
