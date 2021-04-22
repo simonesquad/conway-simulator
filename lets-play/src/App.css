@@ -1,11 +1,25 @@
 .App {
   text-align: center;
   background-color: black;
+  height: 140vh;
 }
 .header{
   background-color: black;
   color: #04d9ff;
   height: 10vh;
   padding: 3%;
+}
+.body{
+  height: 10vh;
+  width: 50vw;
+  justify-content: space-evenly;
+  margin-left: 25%;
+  background-color: black;
+}
+.button{
+  background-color: black;
+  color: #04d9ff;
+  padding: 1%;
+  width: 10vw;
 }
 

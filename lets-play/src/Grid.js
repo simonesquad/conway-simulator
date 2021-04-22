@@ -198,7 +198,7 @@ class Grid extends React.Component {
         return (
             <>
              <div className="Controls">
-                Update every <input value={this.state.interval} onChange={this.handleIntervalChange} /> msc 
+                Update every <input value={this.state.interval} onChange={this.handleIntervalChange} /> 
                 {isRunning ? 
                 <button className="button" onClick={this.stopGame}>Stop</button> : 
                 <button className="button" onClick={this.playGame}>Play</button>}
