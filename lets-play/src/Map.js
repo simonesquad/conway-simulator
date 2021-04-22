@@ -21,9 +21,10 @@
 
 import React, { useState, useCallback, useRef } from 'react';
 import produce from "immer";
+import './Map.css';
 
-const numRows = 50;
-const numCols = 70;
+const numRows = 25;
+const numCols = 25;
 
 //the same possible neighbor combinations for each cell in the game
 const operations = [
@@ -90,6 +91,7 @@ const Map = () => {
 
     return (
         <>
+        <div className="buttons">
         <button 
             onClick={() => {
                 setRunning(!running);
@@ -118,7 +120,8 @@ const Map = () => {
                 setGrid(generateEmptyGrid());
             }}
         >Clear Grid</button>
-        <div 
+        </div>
+        <div className="map"
             style={{
                 display: 'grid',
                 gridTemplateColumns: `repeat(${numCols}, 20px)`
