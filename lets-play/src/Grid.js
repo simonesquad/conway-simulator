@@ -166,7 +166,7 @@ class Grid extends React.Component {
 
         
     render() {
-        const { cells, interval, isRunning } = this.state;
+        const { cells, isRunning } = this.state;
 
         let config = {
             num: [4, 7],
