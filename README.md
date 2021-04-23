@@ -9,6 +9,8 @@ This version is created using class components under the file Grid.js. It had no
 Version B: "The Map"
 This version is built using React hooks to experiment with this modality of the game. There is also a randomize and clear function on this grid. 
 
+Deployed Link: https://conway-simulator.vercel.app
+
 # Universal Rules of the Game
 1. Any live cell with fewer than two live neighbors dies, as if caused by under population.
 2. Any live cell with two or three live neighbors lives on to the next generation.
