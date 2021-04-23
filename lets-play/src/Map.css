@@ -9,6 +9,9 @@
   padding: 1%;
   width: 10vw;
 }
+.buttons>button:hover{
+  color: red;
+}
 .map{
     margin-top: 5%;
     margin-left: 30%;
